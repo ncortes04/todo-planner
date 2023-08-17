@@ -1,0 +1,106 @@
+<div class="meta-data">
+  <div class="user-container m-3">
+    <img alt="user" />
+    <div>
+      <button class="edit-btn btn btn-primary py-1 px-2" (click)="setUpdate()">
+        <i *ngIf="!getUpdate()" class="fas fa-pencil-alt"></i>
+        <i *ngIf="getUpdate()" class="fas fa-times"></i>
+      </button>
+    </div>
+    <div>
+      <p *ngIf="!getUpdate()" class="email">
+        {{ getProperty("name") ? getProperty("name") : "No user name found" }}
+      </p>
+      <input
+        *ngIf="!getProperty('name') || getUpdate()"
+        class="form-control my-2"
+        [value]="name"
+        [(ngModel)]="name"
+        [placeholder]="getProperty('name') ? getProperty('name') : 'Enter Name'"
+      />
+    </div>
+    <div>
+      <p *ngIf="!getUpdate()" class="email">
+        {{
+          getProperty("email") ? getProperty("email") : "No user email found"
+        }}
+      </p>
+      <input
+        *ngIf="!getProperty('email') || getUpdate()"
+        class="form-control my-2"
+        [value]="email"
+        [(ngModel)]="email"
+        [placeholder]="
+          getProperty('email') ? getProperty('email') : 'Enter Email'
+        "
+      />
+    </div>
+    <div *ngIf="!getProperty('name') || !getProperty('email') || getUpdate()">
+      <button class="btn btn-primary my-2" (click)="updateUserData()">
+        Confirm
+      </button>
+    </div>
+  </div>
+  <div class="task-container">
+    <div class="task-data">
+      <p class="bold">{{ getProperty("todos") }}</p>
+      <p>Todos</p>
+      <p class="secondary">tasks</p>
+    </div>
+    <div class="task-data">
+      <p class="bold">{{ getProperty("completed") }}</p>
+      <p>Completed</p>
+      <p class="secondary">tasks</p>
+    </div>
+    <div class="task-data">
+      <p class="bold">{{ getProperty("primary") }}</p>
+      <p>Primary</p>
+      <p class="secondary">tasks</p>
+    </div>
+  </div>
+</div>
+
+<div class="categories-container">
+  <div class="head-flex">
+    <h2 class="mt-2">Categories</h2>
+    <button class="btn-i-primary" (click)="setEditCategory()">
+      <i class="fas fa-plus"></i>
+    </button>
+  </div>
+  <div class="d-flex flex-column gap-2 m-2 mt-0" *ngIf="getEditCategory()">
+    <label for="category">Add Category:</label>
+
+    <div class="d-flex gap-3">
+      <input
+        [value]="category"
+        class="form-control"
+        placeholder="Enter Category"
+        [(ngModel)]="category"
+      />
+      <button class="cat-add" (click)="updateCategory()">
+        <i class="fas fa-check"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="category-flex">
+    <div
+      class="category-content"
+      *ngFor="let cat of userData?.categories; let i = index"
+    >
+      <button class="unset" (click)="navigateCategory(cat)">
+        <p>{{ cat }}</p>
+      </button>
+      <button class="cat-times btn-i-primary" (click)="removeCategory(i)">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="friends">
+  <div>
+    <h2 class="my-2">Friends</h2>
+  </div>
+  <div></div>
+</div>

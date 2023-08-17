@@ -1,0 +1,56 @@
+<div>
+  <div class="todo-header-container">
+    <div *ngIf="category" class="d-flex gap-2">
+      <h2>{{ category }}</h2>
+      <button class="btn-i-primary">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+    <div *ngIf="!category" class="d-flex gap-2">
+      <h2>No Category Selected</h2>
+    </div>
+    <div class="button-flex">
+      <button
+        (click)="updateFilter('All')"
+        [class]="
+          selectedFilter === 'All'
+            ? 'btn btn-primary br-3 rounded-pill px-3 spaced'
+            : 'unset p-2'
+        "
+      >
+        All
+      </button>
+      <button
+        (click)="updateFilter('Completed')"
+        [class]="
+          selectedFilter === 'Completed'
+            ? 'btn btn-primary br-3 rounded-pill px-3 spaced'
+            : 'unset p-2'
+        "
+      >
+        Completed
+      </button>
+      <button
+        (click)="updateFilter('Primary')"
+        [class]="
+          selectedFilter === 'Primary'
+            ? 'btn btn-primary br-3 rounded-pill px-3 spaced'
+            : 'unset p-2'
+        "
+      >
+        Primary
+      </button>
+      <button
+        (click)="updateFilter('Active')"
+        [class]="
+          selectedFilter === 'Active'
+            ? 'btn btn-primary br-3 rounded-pill px-3 spaced'
+            : 'unset p-2'
+        "
+      >
+        Active
+      </button>
+    </div>
+  </div>
+  <button (click)="addNewTask()"></button>
+</div>

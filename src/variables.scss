@@ -1,0 +1,28 @@
+// Colors
+:root {
+  --primary-color: #007bff;
+  --light: #b0b0b0bd;
+  --secondary-color: #787e83d0;
+  --secondary-grey: #6f6f70;
+  --background-color: #f8f9fa;
+
+  // Font Sizes
+  --secondary-size: 14px;
+  --base-font-size: 16px;
+  --heading-font-size: 24px;
+
+  // Other Constants
+  --max-container-width: 1200px;
+}
+.text-grey {
+  color: var(--secondary-grey);
+}
+.bolder {
+  font-weight: bolder;
+}
+.spaced {
+  letter-spacing: 0.1em;
+}
+.active {
+  background-color: black !important;
+}

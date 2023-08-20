@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { FormsModule } from '@angular/forms';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { TaskContainerComponent } from './task-container/task-container.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     FooterComponent,
     SidebarComponent,
     NavBarComponent,
+    TaskContainerComponent,
   ],
   imports: [FormsModule, BrowserModule, AppRoutingModule],
   providers: [],

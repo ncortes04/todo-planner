@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { UserService, UserData } from '../services/userService';
-import { CategoryService } from '../services/categoryService';
+import { UserService, UserData } from '../../services/userService';
+import { CategoryService } from '../../services/categoryService';
 
 @Component({
   selector: 'app-sidebar',

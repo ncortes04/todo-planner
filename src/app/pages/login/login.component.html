@@ -1,0 +1,34 @@
+<div class="loginparent">
+    <div class="login-container">
+      <div class="toggle-buttons">
+        <button [class.active]="isLoginActive" (click)="toggleLogin()" class="unset">Login</button>
+        <button [class.active]="!isLoginActive" (click)="toggleSignup()" class="unset">Signup</button>
+      </div>
+      <div class="signup-toggle-inputs">
+        <div class="form-group" *ngIf="!isLoginActive">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" class="form-control" placeholder="Enter your first name" [(ngModel)]="firstName">
+        </div>
+        <div class="form-group" *ngIf="!isLoginActive">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" class="form-control" placeholder="Enter your last name" [(ngModel)]="lastName">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" class="form-control" placeholder="Enter your email" [(ngModel)]="email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" class="form-control" placeholder="Enter your password" [(ngModel)]="password">
+      </div>
+      <button class="btn btn-primary submit-btn" 
+      (click)="isLoginActive ? handleLogin() : handleRegister()" 
+      [disabled]="loading">
+        <span *ngIf="!loading">{{ isLoginActive ? 'Login' : 'Signup' }}</span>
+        <span *ngIf="loading" class="loading-spinner"></span>
+        </button>
+        <p>{{ errorMessage }}</p>
+    </div>
+  </div>
+  

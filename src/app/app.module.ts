@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { TaskContainerComponent } from './components/task-container/task-container.component';
 import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +25,9 @@ import { HomeComponent } from './pages/home/home.component';
     NavBarComponent,
     TaskContainerComponent,
     HomeComponent,
+    LoginComponent,
   ],
-  imports: [FormsModule, BrowserModule, AppRoutingModule],
+  imports: [FormsModule, HttpClientModule, BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,0 +1,70 @@
+
+  .loginparent {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .signup-toggle-inputs {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .login-container {
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    min-width: 500px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+  
+    .toggle-buttons {
+      display: flex;
+      justify-content: start;
+      margin-bottom: 20px;
+      button {
+        cursor: pointer;
+        margin: 0 10px;
+        border: none;
+        border-bottom: 3px solid transparent;
+        font-size: 27px;
+
+        &:hover {
+          color: #2e8df3;
+        }
+  
+        &.active {
+          border-color: #007bff;
+        }
+      }
+    }
+  
+    .form-group {
+      margin-bottom: 15px;
+  
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+  
+      input {
+        width: 100%;
+      }
+  
+      p {
+        color: #888;
+        margin-top: 5px;
+      }
+    }
+  
+    .submit-btn {
+      cursor: pointer;
+      width: 100%;
+  
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+  

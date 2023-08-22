@@ -1,11 +1,10 @@
 <div class="nav-container">
-  <button>
-    <p>HOME</p></button
-  ><button>
-    <p>TODOS</p>
-  </button>
-  <button>
-    <p>LOGIN</p>
-  </button>
-  
+  <nav>
+    <ul>
+      <li><a class="unset" routerLink="/home" routerLinkActive="active" aria-current="page">HOME</a></li>
+      <li><a class="unset" routerLink="/todos" routerLinkActive="active" aria-current="page">TODOS</a></li>
+      <li *ngIf="!authService.isLoggedIn()"><a class="unset" routerLink="/login" routerLinkActive="active" aria-current="page">SIGN IN</a></li>
+      <li *ngIf="authService.isLoggedIn()"><a class="unset" (click)="signOut()">SIGN OUT</a></li>
+    </ul>
+  </nav>
 </div>
